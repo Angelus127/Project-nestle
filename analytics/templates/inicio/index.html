@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index\style_index.css' %}">
+    <title>Analytics</title>
+</head>
+<body>
+    <nav>
+        <img src="{% static 'index\logo-kitkat.png' %}" alt="logo-kikat" id="logo">
+        <a href="#">HOME</a>
+        <a href="#">PRODUCTOS</a>
+        <a href="#">ENCUESTAS</a>
+        <a href="#">CODIGO QR</a>
+    </nav> 
+    <main>
+        <div id="title">
+            <h1>GENERACION DE REPORTES</h1>
+            <h3>Elije un producto:</h3>
+        </div> 
+        <div id="products">
+            <button class="product">kikat chuncky</button>
+            <button class="product">kikat white</button>
+            <button class="product">kikat single</button>
+            <button class="product">kikat mini</button>
+            <button class="product">finger kikat</button>
+        </div>
+        <div id="options">           
+                <label for="time_start">Fecha de inicio: </label>
+                <input type="date" id="time_start">
+                <label for="time_end">Fecha de fin: </label>
+                <input type="date" id="time_end">
+                <p>(opcional)</p><br>
+                <button id="procesar">Procesar</button>
+        </div>  
+    </main>
+</body>
+</html>
