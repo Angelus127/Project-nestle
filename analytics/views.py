@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 
 def index(request):
@@ -5,3 +6,6 @@ def index(request):
 
 def product_view(request):
     return render(request, 'productos/products.html')
+
+def report_view(request):
+    return render(request, 'inicio/report.html')

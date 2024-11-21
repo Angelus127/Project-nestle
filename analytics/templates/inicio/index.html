@@ -43,7 +43,9 @@
                 <label for="time_end">Fecha de fin: </label>
                 <input type="date" id="time_end">
                 <p>(opcional)</p><br>
-                <button id="procesar">COMENZAR</button>
+              <form method="get" action="{% url 'report' %}">
+                <button id="procesar" type="submit" name="enviar">COMENZAR</button>
+              </form>  
         </div>  
     </main>
 </body>
