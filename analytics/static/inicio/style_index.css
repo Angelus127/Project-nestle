@@ -1,10 +1,10 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(243, 220, 220);
+    background-color: rgb(241, 229, 229);
 } 
 
 main{
-    margin-left: 200px;
+    margin-left: 20%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@ main{
 
 nav{
     height: 100%;
-    width: 200px;
+    width: 20%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -79,32 +79,56 @@ h3 {
 }
 
 .product {
+    display: inline-block;
+    margin: 20px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+.product input[type="radio"] {
+    display: none;
+}
+  
+.product_img {
+    display: block;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+  
+.product_img img {
     width: 100px;
-    height: 150px;
-    margin: 25px;
-    background-color: transparent;
-    border-color: transparent;
-    color:black;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
-.product:hover {
-    background-color: rgb(233, 233, 233);
-    border-color: transparent;
+.product_img p {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #333;
+}
+  
+.product input[type="radio"]:checked + .product_img {
+    border-color: rgb(255, 0, 55);
+    transform: scale(1.1);
 }
 
 #procesar{
-    width: 90px;
-    height: 30px;
+    width: 650px;
+    height: 40px;
     border-radius: 10px;
-    background-color: red;
+    background-color:red;
     border-color: transparent;
+    font-size: 20px;
+    font-family: fantasy;
     color: white;
 }
 
 #procesar:hover {
     background-color: rgb(255, 55, 55);
     border-color: transparent;
-
 }
 
 label, p, h1, h3 {

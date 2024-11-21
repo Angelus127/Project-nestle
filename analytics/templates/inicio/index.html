@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'index\style_index.css' %}">
+    <link rel="stylesheet" href="{% static 'inicio/style_index.css' %}">
     <title>Analytics</title>
 </head>
 <body>
     <nav>
-        <img src="{% static 'index\logo-kitkat.png' %}" alt="logo-kikat" id="logo">
-        <a href="#">HOME</a>
-        <a href="#">PRODUCTOS</a>
+        <img src="{% static 'logo-kitkat.png' %}" alt="logo-kikat" id="logo">
+        <a href="{% url 'index' %}">HOME</a>
+        <a href="{% url 'producto' %}">PRODUCTOS</a>
         <a href="#">ENCUESTAS</a>
         <a href="#">CODIGO QR</a>
     </nav> 
@@ -22,11 +22,20 @@
             <h3>Elije un producto:</h3>
         </div> 
         <div id="products">
-            <button class="product">kikat chuncky</button>
-            <button class="product">kikat white</button>
-            <button class="product">kikat single</button>
-            <button class="product">kikat mini</button>
-            <button class="product">finger kikat</button>
+            <label class="product">
+                <input type="radio" name="opcion" value="opcion1">
+                <span class="product_img">
+                  <img src="{% static 'logo-kitkat.png' %}" alt="Opción 1">
+                  <p>Kikat white</p>
+                </span>
+              </label>
+            <label class="product">
+                <input type="radio" name="opcion" value="opcion1">
+                <span class="product_img">
+                  <img src="{% static 'logo-kitkat.png' %}" alt="Opción 1">
+                  <p>Kikat clasic</p>
+                </span>
+          </label>
         </div>
         <div id="options">           
                 <label for="time_start">Fecha de inicio: </label>
@@ -34,7 +43,7 @@
                 <label for="time_end">Fecha de fin: </label>
                 <input type="date" id="time_end">
                 <p>(opcional)</p><br>
-                <button id="procesar">Procesar</button>
+                <button id="procesar">COMENZAR</button>
         </div>  
     </main>
 </body>
