@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Califica tu experiencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #d9332a;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/94/Kit_kat_logo2004.png'); 
+            background-repeat: no-repeat;
+            background-position: left top; 
+            background-size: 150px auto; 
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 30px;
+        }
+        .stars {
+            display: flex;
+            justify-content: space-between;
+            max-width: 200px;
+        }
+        .stars input {
+            display: none;
+        }
+        .stars label {
+            font-size: 25px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .stars input:checked ~ label {
+            color: gold;
+        }
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: gold;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background: #d9332a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #7ed957;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Califica tu experiencia</h1>
+        <form action="#" method="post">
+            <div class="question">
+                <label>1. ¿Qué tan satisfech@ estás con el sabor del producto de kit kat?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q1-5" name="q1" value="5" required>
+                    <label for="q1-5">★</label>
+                    <input type="radio" id="q1-4" name="q1" value="4">
+                    <label for="q1-4">★</label>
+                    <input type="radio" id="q1-3" name="q1" value="3">
+                    <label for="q1-3">★</label>
+                    <input type="radio" id="q1-2" name="q1" value="2">
+                    <label for="q1-2">★</label>
+                    <input type="radio" id="q1-1" name="q1" value="1">
+                    <label for="q1-1">★</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>2. ¿Qué tan satisfech@ estás con la calidad del producto?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q2-5" name="q2" value="5" required>
+                    <label for="q2-5">★</label>
+                    <input type="radio" id="q2-4" name="q2" value="4">
+                    <label for="q2-4">★</label>
+                    <input type="radio" id="q2-3" name="q2" value="3">
+                    <label for="q2-3">★</label>
+                    <input type="radio" id="q2-2" name="q2" value="2">
+                    <label for="q2-2">★</label>
+                    <input type="radio" id="q2-1" name="q2" value="1">
+                    <label for="q2-1">★</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>3. ¿Qué tan satisfech@ estás con la presentacion del producto?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q3-5" name="q3" value="5" required>
+                    <label for="q3-5">★</label>
+                    <input type="radio" id="q3-4" name="q3" value="4">
+                    <label for="q3-4">★</label>
+                    <input type="radio" id="q3-3" name="q3" value="3">
+                    <label for="q3-3">★</label>
+                    <input type="radio" id="q3-2" name="q3" value="2">
+                    <label for="q3-2">★</label>
+                    <input type="radio" id="q3-1" name="q3" value="1">
+                    <label for="q3-1">★</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>4. ¿Qué tan satisfech@ estás con la innovacion del producto?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q4-5" name="q4" value="5" required>
+                    <label for="q4-5">★</label>
+                    <input type="radio" id="q4-4" name="q4" value="4">
+                    <label for="q4-4">★</label>
+                    <input type="radio" id="q4-3" name="q4" value="3">
+                    <label for="q4-3">★</label>
+                    <input type="radio" id="q4-2" name="q4" value="2">
+                    <label for="q4-2">★</label>
+                    <input type="radio" id="q4-1" name="q4" value="1">
+                    <label for="q4-1">★</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>5. ¿Qué tan probable es que recomiendes nuestro producto a un amig@?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q5-5" name="q5" value="5" required>
+                    <label for="q5-5">★</label>
+                    <input type="radio" id="q5-4" name="q5" value="4">
+                    <label for="q5-4">★</label>
+                    <input type="radio" id="q5-3" name="q5" value="3">
+                    <label for="q5-3">★</label>
+                    <input type="radio" id="q5-2" name="q5" value="2">
+                    <label for="q5-2">★</label>
+                    <input type="radio" id="q5-1" name="q5" value="1">
+                    <label for="q5-1">★</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>6. ¿Qué tan satisfech@ estás con los precios de nuestros productos kitkat?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q6-5" name="q6" value="5" required>
+                    <label for="q6-5">★</label>
+                    <input type="radio" id="q6-4" name="q6" value="4">
+                    <label for="q6-4">★</label>
+                    <input type="radio" id="q6-3" name="q6" value="3">
+                    <label for="q6-3">★</label>
+                    <input type="radio" id="q6-2" name="q6" value="2">
+                    <label for="q6-2">★</label>
+                    <input type="radio" id="q6-1" name="q6" value="1">
+                    <label for="q6-1">★</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>7. ¿Qué tan satisfech@ estás con nuestra política de devoluciones?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q7-5" name="q7" value="5" required>
+                    <label for="q7-5">★</label>
+                    <input type="radio" id="q7-4" name="q7" value="4">
+                    <label for="q7-4">★</label>
+                    <input type="radio" id="q7-3" name="q7" value="3">
+                    <label for="q7-3">★</label>
+                    <input type="radio" id="q7-2" name="q7" value="2">
+                    <label for="q7-2">★</label>
+                    <input type="radio" id="q7-1" name="q7" value="1">
+                    <label for="q7-1">★</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>8. ¿Qué tan satisfech@ estás con las promociones y descuentos ofrecidos?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q8-5" name="q8" value="5" required>
+                    <label for="q8-5">★</label>
+                    <input type="radio" id="q8-4" name="q8" value="4">
+                    <label for="q8-4">★</label>
+                    <input type="radio" id="q8-3" name="q8" value="3">
+                    <label for="q8-3">★</label>
+                    <input type="radio" id="q8-2" name="q8" value="2">
+                    <label for="q8-2">★</label>
+                    <input type="radio" id="q8-1" name="q8" value="1">
+                    <label for="q8-1">★</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>9. ¿Qué tan satisfech@ estás con nuestra variedad de productos?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q9-5" name="q9" value="5" required>
+                    <label for="q9-5">★</label>
+                    <input type="radio" id="q9-4" name="q9" value="4">
+                    <label for="q9-4">★</label>
+                    <input type="radio" id="q9-3" name="q9" value="3">
+                    <label for="q9-3">★</label>
+                    <input type="radio" id="q9-2" name="q9" value="2">
+                    <label for="q9-2">★</label>
+                    <input type="radio" id="q9-1" name="q9" value="1">
+                    <label for="q9-1">★</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label>10. ¿Qué tan satisfech@ estás con la claridad de la información sobre el producto?</label><br>
+                <div class="stars">
+                    <input type="radio" id="q10-5" name="q10" value="5" required>
+                    <label for="q10-5">★</label>
+                    <input type="radio" id="q10-4" name="q10" value="4">
+                    <label for="q10-4">★</label>
+                    <input type="radio" id="q10-3" name="q10" value="3">
+                    <label for="q10-3">★</label>
+                    <input type="radio" id="q10-2" name="q10" value="2">
+                    <label for="q10-2">★</label>
+                    <input type="radio" id="q10-1" name="q10" value="1">
+                    <label for="q10-1">★</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>10. ¿Tienes algún comentario o sugerencia?</label><br>
+                <textarea name="q10" placeholder="Escribe tu comentario aquí..." required></textarea>
+            </div>
+
+            <button type="submit">Enviar Encuesta</button>
+        </form>
+    </div>
+</body>
+</html>
