@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'productos/style_producto.css' %}">
+    <link rel="stylesheet" href="{% static 'productos/style_products.css' %}">
     <title>Productos</title>
 </head>
 <body>
@@ -35,11 +35,11 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="thead">Id</th>
                         <th class="thead">Nombre</th>
                         <th class="thead">Descripcion</th>
                         <th class="thead">Categoria</th>
                         <th class="thead">Imagen</th>
+                        <th class="thead">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,11 +49,17 @@
                     <td>{{ producto.categoria }}</td>
                     <td>{{ producto.descripcion }}</td>
                     <td>
-                        {% if producto.imagen %}
-                            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" style="width: 100px; height: auto;">
+                        {% if producto.imagen_url %}
+                        <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">                        
                         {% else %}
                             No hay imagen
                         {% endif %}
+                    </td>
+                    <td>
+                        <form action="{% url 'eliminar_producto' producto.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" id="delete">Eliminar</button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
