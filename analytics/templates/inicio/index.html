@@ -22,20 +22,15 @@
             <h3>Elije un producto:</h3>
         </div> 
         <div id="products">
+          {% for producto in productos %}
             <label class="product">
-                <input type="radio" name="opcion" value="opcion1">
+                <input type="radio" name="opcion" value="{{ producto.id }}">
                 <span class="product_img">
-                  <img src="{% static 'logo-kitkat.png' %}" alt="Opción 1">
-                  <p>Kikat white</p>
+                    <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">
+                    <p>{{ producto.nombre }}</p>
                 </span>
-              </label>
-            <label class="product">
-                <input type="radio" name="opcion" value="opcion1">
-                <span class="product_img">
-                  <img src="{% static 'logo-kitkat.png' %}" alt="Opción 1">
-                  <p>Kikat clasic</p>
-                </span>
-          </label>
+            </label>
+          {% endfor %}
         </div>
         <div id="options">           
                 <label for="time_start">Fecha de inicio: </label>

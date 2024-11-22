@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'productos/style_producto.css' %}">
+    <link rel="stylesheet" href="{% static 'productos/style_products.css' %}">
     <title>Productos</title>
 </head>
 <body>
@@ -22,15 +22,10 @@
             <h3 class="subtitle">AGREGAR PRODUCTO</h3>
         </div>
         <div id="control_product">
-            <label for="name_p">Nombre:</label>
-                <input type="text" id="name_p">
-            <label for="category_p">Cataegoria: </label>
-                <input type="text" id="category_p"><br>
-            <label for="description_p">Descripcion del producto: </label><br>
-                <input type="text" id="description_p"><br>
-            <label for="image_p">Subir imagen:</label>
-                <input type="file" id="image_p"><br>
-            <button type="submit" id="submit_p">AGREGAR</button>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Agregar</button>
             </form>
         </div>
         <div class="title">
@@ -40,22 +35,35 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="thead">Id</th>
                         <th class="thead">Nombre</th>
                         <th class="thead">Descripcion</th>
                         <th class="thead">Categoria</th>
                         <th class="thead">Imagen</th>
+                        <th class="thead">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </tbody>
+                    {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.categoria }}</td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td>
+                        {% if producto.imagen_url %}
+                        <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">                        
+                        {% else %}
+                            No hay imagen
+                        {% endif %}
+                    </td>
+                    <td>
+                        <form action="{% url 'eliminar_producto' producto.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" id="delete">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
             </table>
         </div>
     </main>
