@@ -13,8 +13,8 @@
         <img src="{% static 'logo-kitkat.png' %}" alt="logo-kikat" id="logo">
         <a href="{% url 'index' %}">HOME</a>
         <a href="{% url 'producto' %}">PRODUCTOS</a>
-        <a href="#">ENCUESTAS</a>
-        <a href="#">CODIGO QR</a>
+        <a href="{% url 'encuesta' %}">ENCUESTAS</a>
+        <a href="{% url 'QR' %}">CODIGO QR</a>
     </nav> 
     <main>
         <div id="title">
