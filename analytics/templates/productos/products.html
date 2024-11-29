@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'productos/style_products.css' %}">
+    <title>Productos</title>
+</head>
+<body>
+    <nav>
+        <img src="{% static 'logo-kitkat.png' %}" alt="logo-kikat" id="logo">
+        <a href="{% url 'index' %}">HOME</a>
+        <a href="{% url 'producto' %}">PRODUCTOS</a>
+        <a href="{%url 'encuesta' %}">ENCUESTAS</a>
+        <a href="{%url 'QR' %}">CODIGO QR</a>
+    </nav>
+    <main>
+        <div class="title">
+            <h1>PRODUCTOS</h1>
+            <h3 class="subtitle">AGREGAR PRODUCTO</h3>
+        </div>
+        <div id="control_product">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+        <div class="title">
+            <h3 class="subtitle">LISTA DE PRODUCTOS</h3>
+        </div>
+        <div id="product_list">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="thead">Nombre</th>
+                        <th class="thead">Descripcion</th>
+                        <th class="thead">Categoria</th>
+                        <th class="thead">Imagen</th>
+                        <th class="thead">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.categoria }}</td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td>
+                        {% if producto.imagen_url %}
+                        <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">                        
+                        {% else %}
+                            No hay imagen
+                        {% endif %}
+                    </td>
+                    <td>
+                        <form action="{% url 'eliminar_producto' producto.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" id="delete">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'codigoQR/styles_QR.css' %}">
+    <title>codigoQR</title>
+</head>
+<body>
+    <nav>
+        <img src="{% static 'logo-kitkat.png' %}" alt="logo-kikat" id="logo">
+        <a href="{% url 'index' %}">HOME</a>
+        <a href="{% url 'producto' %}">PRODUCTOS</a>
+        <a href="{% url 'encuesta' %}">ENCUESTAS</a>
+        <a href="{% url 'QR' %}">CODIGO QR</a>
+    </nav>
+    <main>
+        <div id="title">    
+            <h1>codigoQR</h1>
+            <h3>Generar codigo de QR</h3>
+        </div>
+        <div id="content">
+            <p>lista de codigosQR</p>
+        </div>
+    </main>
+</body>
+</html>
